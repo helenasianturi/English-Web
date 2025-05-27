@@ -1,0 +1,285 @@
+/* --- Variabel Warna Pastel Pink --- */
+:root {
+    --primary-pink: #FFC0CB; /* Pink dasar */
+    --secondary-pink: #FFB6C1; /* LightPink */
+    --accent-pink: #DB7093; /* PaleVioletRed - untuk aksen lebih gelap */
+    --light-bg: #FFF0F5; /* LavenderBlush - latar belakang sangat terang */
+    --text-color: #5C3F4C; /* Warna teks yang lebih gelap agar kontras */
+    --text-light: #7C5C6C;
+    --border-color: #FFDAE0;
+    --hover-pink: #FFACC4;
+    --active-pink: #F7A0B6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih modern */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    padding-bottom: 80px; /* Space for fixed footer */
+    overflow-x: hidden; /* Mencegah scroll horizontal karena animasi */
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--accent-pink);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    animation: slideDown 0.7s ease-out;
+}
+
+nav {
+    margin-top: 1rem;
+    animation: fadeInNav 1s 0.5s ease-out backwards; /* Delay animasi nav */
+}
+
+nav a {
+    background: var(--accent-pink);
+    color: white;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    margin: 0 0.6rem;
+    border-radius: 25px; /* Tombol lebih bulat */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a:hover, nav a.active {
+    background: var(--hover-pink);
+    color: var(--text-color);
+    transform: translateY(-2px) scale(1.05); /* Efek hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+nav a.active {
+    background: var(--active-pink);
+    font-weight: bold;
+}
+
+main {
+    padding: 25px;
+    max-width: 850px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.page-content {
+    animation: fadeInContent 0.8s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    background: var(--secondary-pink);
+    color: var(--text-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 2px solid var(--primary-pink);
+    font-size: 0.9rem;
+}
+
+/* Styling untuk Konten Spesifik */
+.vocab-list, .grammar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.vocab-list li, .grammar-list li {
+    background: var(--light-bg);
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-left: 6px solid var(--primary-pink);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vocab-list li:hover, .grammar-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.vocab-list strong {
+    color: var(--accent-pink);
+    font-weight: 600;
+}
+
+.grammar-list h3 {
+    color: var(--accent-pink);
+    margin-top: 0;
+}
+.grammar-list h4 {
+    color: var(--text-light);
+}
+
+/* Kuis Styling */
+.quiz-question p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--accent-pink);
+}
+
+.quiz-options label {
+    display: block;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    background-color: #fdeef1; /* Warna lebih lembut untuk pilihan */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.quiz-options label:hover {
+    background-color: #fce4e8;
+    border-color: var(--secondary-pink);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    accent-color: var(--accent-pink); /* Warna radio button */
+}
+
+.quiz-button {
+    background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.quiz-button:hover {
+    background: linear-gradient(135deg, var(--hover-pink), var(--primary-pink));
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.quiz-feedback {
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    animation: popIn 0.5s ease-out;
+}
+
+.quiz-feedback.correct {
+    background-color: #E0FFE0; /* Hijau pastel lembut */
+    color: #38761D;
+    border: 1px solid #A2D9A2;
+}
+
+.quiz-feedback.incorrect {
+    background-color: #FFEEEE; /* Merah muda sangat lembut untuk kesalahan */
+    color: #CC0000;
+    border: 1px solid #FFD2D2;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInNav {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animasi untuk list item saat muncul (jika Anda menggunakan JS untuk menambahkannya secara dinamis) */
+.vocab-list li, .grammar-list li {
+    /* ... (properti yang sudah ada) ... */
+    animation: listItemAppear 0.5s ease-out forwards;
+    opacity: 0; /* Mulai transparan */
+}
+
+/* Atur delay animasi untuk setiap list item jika ada banyak */
+.vocab-list li:nth-child(1), .grammar-list li:nth-child(1) { animation-delay: 0.1s; }
+.vocab-list li:nth-child(2), .grammar-list li:nth-child(2) { animation-delay: 0.2s; }
+.vocab-list li:nth-child(3), .grammar-list li:nth-child(3) { animation-delay: 0.3s; }
+.vocab-list li:nth-child(4), .grammar-list li:nth-child(4) { animation-delay: 0.4s; }
+.vocab-list li:nth-child(5), .grammar-list li:nth-child(5) { animation-delay: 0.5s; }
+/* Lanjutkan jika item lebih banyak */
+
+
+@keyframes listItemAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsif (opsional, tapi baik untuk ditambahkan) */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
